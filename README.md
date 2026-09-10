@@ -2,7 +2,6 @@
 
 Site institucional de página única para o **Studio Jauker** (Nicolly Jauker), estúdio especializado em alongamento de unhas em Praia Grande/SP. O objetivo do site é apresentar o trabalho do estúdio com um visual editorial e sofisticado, e converter visitantes em agendamentos diretos pelo WhatsApp.
 
-**[nicollyjauker.com.br](https://nicollyjauker.com.br)** _(domínio a confirmar)_
 
 ## Sobre o produto
 
