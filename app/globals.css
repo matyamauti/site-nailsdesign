@@ -1,26 +1,97 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-bg: #ffffff;
+  --color-surface: #f6e9fb;
+  --color-ink: #17141a;
+  --color-ink-muted: #6e6775;
+  --color-border: #e8e3e7;
+  --color-lilac: #c6b4de;
+  --color-lilac-soft: #ece5f4;
+  --color-mauve: #9c89a8;
+  --color-purple: #8e5fb0;
+  --color-purple-deep: #6b4488;
+  --color-purple-soft: #f1e9f7;
+  /* Roxo exato da logo (fundo do selo "Nicoli Jauker") — reservado para blocos de fundo, não para texto. */
+  --color-purple-vivid: #db92ef;
+  --color-rosegold: #b98d74;
+  --color-rosegold-deep: #96694f;
+  --color-rosegold-soft: #f1e6de;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-ink: var(--color-ink);
+  --color-ink-muted: var(--color-ink-muted);
+  --color-border: var(--color-border);
+  --color-lilac: var(--color-lilac);
+  --color-lilac-soft: var(--color-lilac-soft);
+  --color-mauve: var(--color-mauve);
+  --color-purple: var(--color-purple);
+  --color-purple-deep: var(--color-purple-deep);
+  --color-purple-soft: var(--color-purple-soft);
+  --color-purple-vivid: var(--color-purple-vivid);
+  --color-rosegold: var(--color-rosegold);
+  --color-rosegold-deep: var(--color-rosegold-deep);
+  --color-rosegold-soft: var(--color-rosegold-soft);
+
+  --font-display: var(--font-playfair);
+  --font-sans: var(--font-inter);
+
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-lilac-soft);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-purple);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .font-italic-accent {
+    font-family: var(--font-display), serif;
+    font-style: italic;
+  }
 }
